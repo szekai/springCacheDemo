@@ -3,3 +3,19 @@ hazelcast:
     join:
       multicast:
         enabled: true
+  listeners:
+    - com.szekai.hazelcastDemo.listener.ExampleDistObjListener
+    - com.szekai.hazelcastDemo.listener.NodeLifecycleListener
+    - com.szekai.hazelcastDemo.listener.ClusterMembershipListener
+#  replicatedmap:
+#    default:
+#      in-memory-format: BINARY
+#      async-fillup: true
+#      statistics-enabled: true
+#      entry-listeners:
+#        - class-name: com.szekai.hazelcastDemo.listener.MyEntryListener
+#      split-brain-protection-ref: splitbrainprotection-name
+  map:
+    tasks:
+      entry-listeners:
+        - class-name: com.szekai.hazelcastDemo.listener.MyEntryListener
